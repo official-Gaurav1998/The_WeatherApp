@@ -6,7 +6,7 @@ const humidityValue = document.querySelector('.humidity');
 const windValue = document.querySelector('.wind');
 
 //const express = require('express');
-//require('dotenv').config();
+require('dotenv').config();
 
 //Server part - not using
 // const app = express();
@@ -28,7 +28,7 @@ searchButton.addEventListener('click', function(){
 async function getTemperature(city){
     try{
         const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
-        const apiKey = '7755e8cd63a1b13ab582e2c57ea4cd22';
+        const apiKey = process.env.API_KEY;
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
         if(response.status == 404)
         {
