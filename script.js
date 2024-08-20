@@ -5,18 +5,6 @@ const cityName = document.querySelector('.city');
 const humidityValue = document.querySelector('.humidity');
 const windValue = document.querySelector('.wind');
 
-//const express = require('express');
-require('dotenv').config();
-
-//Server part - not using
-// const app = express();
-// const port = process.env.PORT;
-// app.listen(port,() =>{
-//     console.log(`Starting server at ${port} || 3000`)
-// });
-// app.use(express.static('public'));
-// app.use(express.json({limit:'1mb'}));
-
 //EventListner - Click Event
 searchButton.addEventListener('click', function(){
     const userInput = document.querySelector('#input').value;
@@ -28,7 +16,7 @@ searchButton.addEventListener('click', function(){
 async function getTemperature(city){
     try{
         const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
-        const apiKey = process.env.API_KEY;
+        const apiKey = '7755e8cd63a1b13ab582e2c57ea4cd22';
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
         if(response.status == 404)
         {
