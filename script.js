@@ -30,7 +30,7 @@ async function getTemperature(city){
             humidityValue.innerHTML = `${data.main.humidity}%`;
             windValue.innerHTML = `${data.wind.speed} km/h`;
 
-            //call image changer function -  which will change image according to temperature
+            //call image changer function -  which will change image according to temperature coming from OpenWeatherAPI
             const imagePath = changeTemperatureImage(data.weather[0].main);
             tempImg.src = imagePath;
 
